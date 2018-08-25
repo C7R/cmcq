@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>What about this question??</title>
+      <link rel="icon" href="/static/img/logo.jpg" type="image/gif" sizes="16x16">
+  </head>
+  <body>
+    <form action="filter" method="POST">
+    {% csrf_token %}
+    <div class="container-fluid border border-primary" style="height: 100vh;">
+      <div class="row  border border-warning " style="height: 90vh;">
+            <div class="col-lg-8 border border-success d-flex flex-column"> 
+
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Question </label>
+                    <textarea class="form-control bg-dark text-white" id="exampleFormControlTextarea1" rows="20" style="resize:none;" name = "nqtext" >{{ qtext }}</textarea>
+                </div>
+                <div class="row d-flex justify-content-center align-items-center">
+                   <div class="form-group text-center ">
+                        <label for="exampleFormControlTextarea1">Answer</label>
+                        <textarea class="form-control text-center" id="exampleFormControlTextarea1" style="resize:none;" rows="2"  name ="nans" >{{ ans }}</textarea>
+                  </div>  
+				  <div>
+				   
+				  </div>
+                </div>
+
+             </div>
+            <div class="col-lg-4 border border-danger d-flex flex-column"> 
+               <div class="input-group my-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+
+
+                            <input type="radio" name="ranswer" value = "1" aria-label="Radio button for following text input" {%  if ans == 1  %} checked {%  endif %}>
+							A}
+						</div>
+					</div>
+
+							<input type="text" class="form-control text-center" aria-label="Text input with radio button" name = "nopa" value = "{{ opa }}">
+			    </div>
+				   <div class="input-group my-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<input type="radio" name="ranswer" value = "2" aria-label="Radio button for following text input" {%  if ans == 2  %} checked {%  endif %} >
+							 B}
+						</div>
+					</div>
+							<input type="text" class="form-control text-center" aria-label="Text input with radio button" name = "nopb" value = "{{ opb }}">
+			    </div>
+				   <div class="input-group my-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<input type="radio" name="ranswer" value = "3" aria-label="Radio button for following text input" {%  if ans == 3  %} checked {%  endif %} >
+							C}
+						</div>
+					</div>
+							<input type="text" class="form-control text-center" aria-label="Text input with radio button" name = "nopc" value = "{{ opc }}">
+			    </div>
+				   <div class="input-group my-4">
+					<div class="input-group-prepend">
+						<div class="input-group-text">
+							<input type="radio" name="ranswer" value = "4" aria-label="Radio button for following text input" {%  if ans == 4  %} checked {%  endif %} >
+							D}
+						</div>
+					</div>
+							<input type="text" class="form-control text-center" aria-label="Text input with radio button" name = "nopd" value = "{{ opd }}">
+			    </div>
+
+              <div class="row d-flex justify-content-around border border-info py-3">
+			  
+                    <div class="input-group-text bg-dark text-white">
+							<input type="radio" name="rlvl" value = "1" aria-label="Radio button for following text input">
+								Junior
+						</div>
+
+						<div class="input-group-text bg-success text-white">
+							<input type="radio" name="rlvl" value = "2"  aria-label="Radio button for following text input">
+							 Senior
+						</div>
+                      <div class="input-group-text bg-info text-white">
+                                <input type="radio" name="rlvl" value = "3" aria-label="Radio button for following text input">
+                                 Skip
+                            </div>
+              </div>
+			   <div class="row d-flex justify-content-around border border-info py-3">
+			  
+                   
+                    <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+
+
+          </div>
+      </div>
+    </div>
+    </form>
+
+  <form action = "logout">
+      <div class="row d-flex justify-content-around border border-info py-3">
+
+
+                    <button type="submit" class="btn btn-danger my-5">Logout</button>
+              </div>
+  </form>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
