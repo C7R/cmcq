@@ -28,7 +28,7 @@ def signup(request):
         cu = request.user.id
         print("Player id during creation of user : ",cu)
         sid = ((cu-1) * 100 - 99)
-        cid = ((cu-1) * 100 - 100)
+        cid = ((cu-1) * 100 - 99)
         eid = ((cu-1) * 100)
         user_object = Player.objects.create(pid = user, pname = uname, sid = sid, cid = cid, eid = eid)
         user_object.save()
@@ -90,6 +90,12 @@ def filter(request):
                     print("Value of rb2 is : ",rb2)
                     nque = NewQuestions.objects.create(question = qtext, optiona = opta, optionb = optb, optionc = optc, optiond = optd, correctans = ans, level = lvl)
                     nque.save()
+                    u1 = request.user.player
+                    print("player id is : ", u.id)
+                    u1.cid = u1.cid + 1
+                    cid = u1.cid
+                    sid = u1.sid
+                    u1.save()
                     u.save()
                     return HttpResponseRedirect("/question")
                 elif int(rb2) == 2:
@@ -98,9 +104,21 @@ def filter(request):
                     print("Value of rb2 is : ", rb2)
                     nque = NewQuestions.objects.create(question = qtext, optiona = opta, optionb = optb, optionc = optc, optiond = optd, correctans = ans, level = lvl)
                     nque.save()
+                    u1 = request.user.player
+                    print("player id is : ", u.id)
+                    u1.cid = u1.cid + 1
+                    cid = u1.cid
+                    sid = u1.sid
+                    u1.save()
                     u.save()
                     return HttpResponseRedirect("/question")
                 else:
+                    u1 = request.user.player
+                    print("player id is : ", u.id)
+                    u1.cid = u1.cid + 1
+                    cid = u1.cid
+                    sid = u1.sid
+                    u1.save()
                     u.save()
                     return HttpResponseRedirect("/question")
             else:
@@ -116,7 +134,7 @@ def filter(request):
 def question(request):
     u = request.user.player
     print("player id is : ",u.id)
-    u.cid = u.cid + 1
+    # u.cid = u.cid + 1
     cid = u.cid
     sid = u.sid
     u.save()
