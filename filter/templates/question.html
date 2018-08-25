@@ -22,15 +22,7 @@
                     <label for="exampleFormControlTextarea1">Question </label>
                     <textarea class="form-control bg-dark text-white" id="exampleFormControlTextarea1" rows="20" style="resize:none;" name = "nqtext" >{{ qtext }}</textarea>
                 </div>
-                <div class="row d-flex justify-content-center align-items-center">
-                   <div class="form-group text-center ">
-                        <label for="exampleFormControlTextarea1">Answer</label>
-                        <textarea class="form-control text-center" id="exampleFormControlTextarea1" style="resize:none;" rows="2"  name ="nans" >{{ ans }}</textarea>
-                  </div>  
-				  <div>
-				   
-				  </div>
-                </div>
+
 
              </div>
             <div class="col-lg-4 border border-danger d-flex flex-column"> 
@@ -94,21 +86,22 @@
 			  
                    
                     <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
 
+              </div>
+            <div class="row d-flex justify-content-around border border-info py-3">
+                <a href="/logout"><button type="button" class="btn btn-danger my-5">Logout</button></a>
+            </div>
 
           </div>
       </div>
     </div>
     </form>
 
-  <form action = "logout">
-      <div class="row d-flex justify-content-around border border-info py-3">
 
+{#      <div class="row d-flex justify-content-around border border-info py-3">#}
+{#                    <button type="submit" class="btn btn-danger my-5">Logout</button>#}
+{#      </div>#}
 
-                    <button type="submit" class="btn btn-danger my-5">Logout</button>
-              </div>
-  </form>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

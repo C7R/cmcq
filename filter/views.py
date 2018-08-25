@@ -142,7 +142,7 @@ def logoutfunc(request):
     logout(request)
     if request.user.is_authenticated:
         return HttpResponseRedirect("/question")
-    return HttpResponse("Logged out!!!")
+    return HttpResponseRedirect("/")
 
 
 
