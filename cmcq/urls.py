@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^login_func$', views.login_func),
     url(r'^question$', views.question),
     url(r'^filter$', views.filter),
+    url(r'^leaderboard$', views.lb),
     url(r'^logout$', views.logoutfunc),
     url(r'^signup', views.signup),
 ]

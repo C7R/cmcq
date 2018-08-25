@@ -146,7 +146,10 @@ def logoutfunc(request):
 
 
 
-
+def lb(request):
+    u = User.objects.filter(is_staff=0)
+    context = {'object':u}
+    return render(request,'lb.html',context)
 
 
 
